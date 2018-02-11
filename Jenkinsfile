@@ -7,11 +7,12 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				checkout scm
-			}		}
+			}
+		}
 		stage('Build') {
 			steps {
 				echo 'Building..'
-				mvn clean install
+				sh 'mvn clean install'
 			}
 		}
 		stage('Test') {
@@ -25,4 +26,4 @@ pipeline {
 			}
 		}
 	}
-}
+}
